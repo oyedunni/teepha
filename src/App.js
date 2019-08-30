@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react'
+import NestedComponent from './NestedComponent'
+import Students from './Students'
+import StudentsGrades from './StudentsGrades'
+import Teachers from './Teachers'
+import Carousels from './Carousels'
+import {Container} from 'react-bootstrap'
+import {Route, Link} from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+  constructor(){
+    super()
+    this.state = {
+     students:[
+       {'id':1, 'name':'Oyekunle Opeyemi', 'score': 92},
+       {'id':2, 'name':'Moyin Akinbolwale', 'score': 52},
+       {'id':3, 'name':'Adeferanmi Tolulope', 'score': 32},
+     ],
+     teachers:[
+       {'id':1, 'name':'Oyekunle Opeyemi', 'age': 52},
+       {'id':2, 'name':'Moyin Akinbolwale', 'age': 78},
+       {'id':3, 'name':'Adeferanmi Tolulope', 'age': 43},
+     ]
+    }
+  }
+  render(){
+    // const projectName = 'Student App'
+    // const firstName = 'Opeyemi'
+    //
+    // const numberOne = 2, numberTwo = 4
+    // const sum = numberOne + numberTwo
+    return(
+      <Container>
+
+        <Link to='/carousel'>Carousel</Link>
+
+        <Route path='/carousel' component={Carousels}/>
+
+        <Students students={this.state.students} />
+        <Teachers teachers={this.state.teachers} />
+        <StudentsGrades students={this.state.students} />
+      </Container>
+    )
+  }
 }
-
-export default App;
+export default App

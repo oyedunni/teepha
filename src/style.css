@@ -1,0 +1,15 @@
+.student-table, .student-table tr, .student-table td, .student-table th{
+ border: 1px solid blue;
+ border-collapse: collapse;
+ padding: 20px;
+ background-color: #fff;
+ color: green;
+ margin: 10px;
+}
+.student-table th{
+ text-transform: uppercase;
+}
+#teacher{
+  background-color: blue;
+  color:#fff;
+}
