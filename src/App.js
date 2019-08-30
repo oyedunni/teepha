@@ -6,7 +6,7 @@ import Teachers from './Teachers'
 import Carousels from './Carousels'
 import {Container} from 'react-bootstrap'
 import {Route, Link} from 'react-router-dom'
-
+ 
 class App extends Component{
   constructor(){
     super()
